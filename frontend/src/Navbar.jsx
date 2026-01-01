@@ -12,7 +12,7 @@ function Navbar() {
        <Link to="/">
          <img
         
-          src="kishan1.jpg"
+          src="/kishan1.jpg"
           alt="logo"
           className="w-10 h-10 rounded-full border-2 border-gray-600"
         />
