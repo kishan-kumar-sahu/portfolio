@@ -49,7 +49,7 @@ const port = process.env.PORT || 4000;
 
   const   filepath= path.join(
   __dirname,
-   "resume",
+   "public",
   "kishan_resume.pdf"
 
 )
