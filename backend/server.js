@@ -107,6 +107,21 @@ app.post("/register",async (req, res) => {
   
 });
 
+
+// 1️⃣ Static files serve
+app.use(express.static(path.join(__dirname, "frontend", "build")));
+
+// 2️⃣ React Router fallback (MOST IMPORTANT)
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "frontend", "build", "index.html")
+  );
+});
+
+
+
+
+
 app.listen(port, () => {
   console.log("server started on port 4000");
 });
