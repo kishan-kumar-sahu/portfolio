@@ -107,15 +107,22 @@ app.post("/register",async (req, res) => {
   
 });
 
+// -------------------- Serve Frontend -------------------- //
 
-// 1️⃣ Static files serve
-const distPath = path.join(__dirname, "..", "frontend", "dist");
+// Path to frontend build
+const frontendDistPath = path.join(__dirname, "..", "frontend", "dist");
 
-app.use(express.static(distPath));
+// Serve static files
+app.use(express.static(frontendDistPath));
 
+// SPA fallback (React Router refresh fix)
 app.use((req, res) => {
-  res.sendFile(path.join(distPath, "index.html"));
+  res.sendFile(path.join(frontendDistPath, "index.html"));
 });
+
+
+
+
 
 
 
