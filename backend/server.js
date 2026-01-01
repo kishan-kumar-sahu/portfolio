@@ -20,12 +20,27 @@ app.use(cors());
 app.use(express.json());
 
 
+  // mongodb
+
+
+  mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected successfully"))
+  .catch((err) => console.log("Error:", err.message));
+
+const port = process.env.PORT || 4000;
+
+
+// mongoose
+//   .connect("mongodb://127.0.0.1:27017/kishandatabase")
+//   .then(() => console.log("mongoDB connected successfully ")).catch((err)=> console.log("erro", err.message))
 
 
 
-mongoose
-  .connect("mongodb://127.0.0.1:27017/kishandatabase")
-  .then(() => console.log("mongoDB connected successfully ")).catch((err)=> console.log("erro", err.message))
+
+
+
+
 
   //  for    download resume
 
@@ -92,6 +107,6 @@ app.post("/register",async (req, res) => {
   
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("server started on port 4000");
 });

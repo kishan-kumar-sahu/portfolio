@@ -131,7 +131,7 @@ function Contact() {
         <div className="bg-gray-400 p-6 rounded-xl shadow-lg">
 
           <img
-           src="illution_image.png "
+           src="/illution_image.png "
 
             alt="contact"
             className="w-24 mx-auto mb-6 hover:rotate-[360deg] duration-300  rounded-lg"

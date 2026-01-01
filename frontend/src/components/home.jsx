@@ -46,7 +46,7 @@ Express, MongoDB, JavaScript, and Tailwind CSS.
         <div className="flex flex-col items-center lg:items-start">
 
           <img
-            src="krishna_photo_copy.jpg"
+            src="/krishna_photo_copy.jpg"
             alt="Kishan Kumar Sahu"
             className="w-64 sm:w-72 rounded-xl shadow-lg
               hover:-translate-y-2 duration-500"
