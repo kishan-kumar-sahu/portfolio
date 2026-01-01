@@ -112,7 +112,7 @@ app.post("/register",async (req, res) => {
 app.use(express.static(path.join(__dirname, "frontend", "build")));
 
 // 2️⃣ React Router fallback (MOST IMPORTANT)
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(
     path.join(__dirname, "frontend", "build", "index.html")
   );
