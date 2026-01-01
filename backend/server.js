@@ -109,15 +109,14 @@ app.post("/register",async (req, res) => {
 
 
 // 1️⃣ Static files serve
-app.use(express.static(path.join(__dirname, "frontend", "build")));
+const distPath = path.join(__dirname, "..", "frontend", "dist");
 
-// 2️⃣ React Router fallback (MOST IMPORTANT)
-// 🔥 React Router refresh FIX (Node 22 compatible)
+app.use(express.static(distPath));
+
 app.use((req, res) => {
-  res.sendFile(
-    path.join(__dirname, "frontend", "build", "index.html")
-  );
+  res.sendFile(path.join(distPath, "index.html"));
 });
+
 
 
 
