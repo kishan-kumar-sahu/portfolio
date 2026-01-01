@@ -108,7 +108,7 @@ function Contact() {
           <div className="bg-white p-5 rounded-xl shadow-md  hover:skew-y-3 duration-500">
             <a href="https://www.linkedin.com/in/kishan-kumar-sahu-10b3b6315/"   className="block"
             
-   
+
             >  <h3 className="font-semibold text-lg">💼 LinkedIn</h3></a>
             
               
