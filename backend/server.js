@@ -109,15 +109,7 @@ app.post("/register",async (req, res) => {
 
 
 
-//////////
 
-const frontendDistPath = path.join(__dirname, "../frontend/dist");
-
-app.use(express.static(frontendDistPath));
-
-app.use((req, res) => {
-  res.sendFile(path.join(frontendDistPath, "index.html"));
-});
 
 
 
