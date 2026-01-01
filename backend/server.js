@@ -109,20 +109,17 @@ app.post("/register",async (req, res) => {
 
 
 
-// ---------------- Serve Frontend ----------------
 
-// Path to frontend build
+// ----------- Serve Frontend -----------
 const frontendDistPath = path.join(__dirname, "..", "frontend", "dist");
 
-// Serve static frontend files
+// 1. First check if the request is for static files
 app.use(express.static(frontendDistPath));
 
-// SPA fallback for React Router (F5 / refresh fix)
-app.use((req, res) => {
+// 2. Then serve index.html for all other routes (SPA support)
+app.get("/*", (req, res) => {
   res.sendFile(path.join(frontendDistPath, "index.html"));
 });
-
-
 
 
 
