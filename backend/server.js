@@ -110,16 +110,7 @@ app.post("/register",async (req, res) => {
 
 
 
-// ----------- Serve Frontend -----------
-const frontendDistPath = path.join(__dirname, "..", "frontend", "dist");
 
-// 1. First check if the request is for static files
-app.use(express.static(frontendDistPath));
-
-// 2. Then serve index.html for all other routes (SPA support)
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(frontendDistPath, "index.html"));
-});
 
 
 
