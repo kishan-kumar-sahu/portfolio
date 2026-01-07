@@ -22,7 +22,7 @@ function Contact() {
 
   e.preventDefault();
 
-   await fetch("https://portfolio-1-j4nu.onrender.com/register" ,{
+   await fetch("https://portfolio-1-server-8zec.onrender.com/register" ,{
 
     method: "POST",
 
