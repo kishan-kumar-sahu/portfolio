@@ -64,10 +64,14 @@ res.download(filepath,"Kishan_kumar_sahu_resume.pdf",(err)=>{
 
    })
 
+
+
    
 app.post("/register", async (req, res) => {
   try {
     const { name, email, message } = req.body;
+
+      console.log(req.body)
 
     const newUser = await User.create({ name, email, message });
 
