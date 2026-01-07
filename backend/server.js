@@ -65,47 +65,72 @@ res.download(filepath,"Kishan_kumar_sahu_resume.pdf",(err)=>{
    })
 
    
+app.post("/register", async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+
+    const newUser = await User.create({ name, email, message });
+
+    // Email should NOT break DB save
+    sendMail(name, email, message)
+      .then(() => console.log("Mail sent"))
+      .catch(err => console.error("Mail error:", err.message));
+
+    res.status(201).json({
+      success: true,
+      message: "Saved successfully",
+      data: newUser,
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Database error",
+    });
+  }
+});
 
 
 
-app.post("/register",async (req, res) => {
+// app.post("/register",async (req, res) => {
 
 
    
-   try {
+//    try {
 
-      const { name, email, message } = req.body;
+//       const { name, email, message } = req.body;
 
 
     
 
-     let  newuser= await User.create({
-    name,
-    email,
-    message
-   })
+//      let  newuser= await User.create({
+//     name,
+//     email,
+//     message
+//    })
 
-     await sendMail(name, email, message);
+//      await sendMail(name, email, message);
 
-     res.status(201).json({
-    success: true,
-    message:"registration successful",
-    data:newuser
+//      res.status(201).json({
+//     success: true,
+//     message:"registration successful",
+//     data:newuser
   
-     })
+//      })
 
-   } catch (error) {
+//    } catch (error) {
     
-   res.status(500).json({
-          success: false,
-      message:  "registration failed",
-      error: error.message, 
-   })
+//    res.status(500).json({
+//           success: false,
+//       message:  "registration failed",
+//       error: error.message, 
+//    })
 
-   }
+//    }
 
   
-});
+// });
 
 
 
