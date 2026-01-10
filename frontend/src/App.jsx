@@ -17,7 +17,7 @@ function App(){
 
   return(<>
 
-<BrowserRouter>
+<HashRouter>
   <Navbar></Navbar>
  <Routes>
   <Route  path="/" element={<Home></Home>}></Route>
@@ -29,7 +29,7 @@ function App(){
  </Routes>
 
 
-</BrowserRouter>
+</HashRouter>
 
    
 
