@@ -1,15 +1,16 @@
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const sendMail = async (name, userEmail, message) => {
   try {
     // SMTP transporter setup
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,     // Brevo SMTP server
-      port: process.env.EMAIL_PORT,     // Usually 587
-      secure: false,                     // TLS
+      host: process.env.EMAIL_HOST,
+      port: parseInt(process.env.EMAIL_PORT),
+      secure: false, // TLS for 587
       auth: {
-        user: process.env.EMAIL_USER,   // Always 'apikey' for Brevo
-        pass: process.env.EMAIL_PASS,   // SMTP key from Brevo
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
